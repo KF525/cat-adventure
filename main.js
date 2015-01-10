@@ -55,18 +55,18 @@ $(document).ready(function(){
 
   $("#run-dining-room").click(function() {
     var header = document.getElementById("header");
-    header.innerHTML = "Oh no! Starbuck is trapped in the" + dining_room.name;
+    header.innerHTML = "Oh no! Starbuck is trapped in the " + dining_room.name;
     var span1 = document.getElementById("run-dining-room");
     span1.id = "run-" + dining_room.exits[0];
-    span1.innerHTML = "Run towards the kitchen.";
+    span1.innerHTML = "Run towards the " + dining_room.exits[0];
     var span2 = document.getElementById("dining-room");
     span2.id = dining_room.exits[0];
-    span2.innerHTML = "Look at the kitchen.";
-    //div2.id = ""
-    //var div2 = document.getElement
-    //console.log($(event.target).parent().data("room-name"));
-  //change the h1 text
-  //change the room ids //);
+    span2.innerHTML = "Look at the " + dining_room.exits[0];
+    var span3 = document.getElementById("run-living-room");
+    span3.id = "run-" + dining_room.exits[1];
+    span3.innerHTML = "Run towards the " + dining_room.exits[1];
+    var span4 = document.getElementById("living-room");
+    span4.innerHTML = "Look at the " + dining_room.exits[1];
   });
 
     $("#dining-room").click(function() {
