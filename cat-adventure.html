@@ -6,16 +6,16 @@
   </head>
   <body>
     <!-- this should update as Starbuck moves -->
-    <h1>Oh no! Starbuck is trapped in the kitchen!</h1>
+    <h1 id="header">Oh no! Starbuck is trapped in the kitchen!</h1>
     <div class="options">
       <!-- this should update as Starbuck gains/loses escape points -->
       <div>Starbuck has 5 escape points</div>
       <!-- these options should update as she moves to/from different rooms -->
-      <div>
-        <span class="run">Run towards the kitchen<span> 
-        <span class="look" id="kitchen">Look at the kitchen</span>
+      <div data-room-name="Dining Room">
+        <span class="run" id="run-dining-room">Run towards the dining room</span>
+        <span class="look" id="dining-room">Look at the dining room</span>
       </div>
-      <div>
+      <div data-room-name="Living Room">
         <span class="run">Run towards the living room</span>
         <span class="look" id="living-room">Look at the living room</span>
       </div>
