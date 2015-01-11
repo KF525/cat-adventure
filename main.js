@@ -55,18 +55,34 @@ $(document).ready(function(){
 
   $("#run-dining-room").click(function() {
     var header = document.getElementById("header");
-    header.innerHTML = "Oh no! Starbuck is trapped in the " + dining_room.name;
-    var span1 = document.getElementById("run-dining-room");
-    span1.id = "run-" + dining_room.exits[0];
-    span1.innerHTML = "Run towards the " + dining_room.exits[0];
-    var span2 = document.getElementById("dining-room");
-    span2.id = dining_room.exits[0];
-    span2.innerHTML = "Look at the " + dining_room.exits[0];
-    var span3 = document.getElementById("run-living-room");
-    span3.id = "run-" + dining_room.exits[1];
-    span3.innerHTML = "Run towards the " + dining_room.exits[1];
-    var span4 = document.getElementById("living-room");
-    span4.innerHTML = "Look at the " + dining_room.exits[1];
+    header.innerHTML = "Oh no! Starbuck is trapped in the " + dining_room.name.toLowerCase();
+    var div1 = document.getElementById("div-dining-room");
+    div1.remove();
+    var div3 = document.createElement("div");
+    document.getElementsByClassName("options")[0].appendChild(div3);
+    div3.id = "div-" + dining_room.exits[0];
+    var span1 = document.createElement("span");
+    div3.appendChild(span1);
+    span1.innerHTML = "Run towards the " + dining_room.exits[0].toLowerCase();
+    span1.id = "run-" + dining_room.exits[0].toLowerCase();
+    var span2 = document.createElement("span");
+    div3.appendChild(span2);
+    span2.innerHTML = " Look at the " + dining_room.exits[0].toLowerCase();
+    span2.id = dining_room.exits[0].toLowerCase();
+
+    var div2 = document.getElementById("div-living-room");
+    div2.remove();
+    var div4 = document.createElement("div");
+    document.getElementsByClassName("options")[0].appendChild(div4);
+    div4.id = "div-" + dining_room.exits[1];
+    var span3 = document.createElement("span");
+    div4.appendChild(span3);
+    span3.innerHTML = "Run towards the " + dining_room.exits[1].toLowerCase();
+    span3.id = "run-" + dining_room.exits[1].toLowerCase();
+    var span4 = document.createElement("span");
+    div4.appendChild(span4);
+    span4.innerHTML = " Look at the " + dining_room.exits[1].toLowerCase();
+    span4.id = dining_room.exits[1].toLowerCase();
   });
 
     $("#dining-room").click(function() {
@@ -75,6 +91,10 @@ $(document).ready(function(){
 
     $("#living-room").click(function() {
       alert( living_room.getDescription() );
+    });
+
+    $("#kitchen").click(function() {
+      alert( kitchen.getDescription() );
     });
     // Add more!
   // }
