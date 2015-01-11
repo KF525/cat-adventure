@@ -1,6 +1,7 @@
-var Cat = function (new_name, new_color) {
+var Cat = function (new_name, new_color, current_location) {
   this.name = new_name;
   this.color = new_color;
+  this.location = current_location;
 };
 
 var Room = function (new_name, new_description, new_exits, new_points) {
@@ -95,6 +96,10 @@ $(document).ready(function(){
 
     $("#kitchen").click(function() {
       alert( kitchen.getDescription() );
+    });
+
+    $("#bedroom").click(function() {
+      alert( bedroom.getDescription() );
     });
     // Add more!
   // }
